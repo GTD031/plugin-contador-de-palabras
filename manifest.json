@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Contador de Palabras",
+  "version": "1.0",
+  "description": "Cuenta las palabras en una sección específica de una página web.",
+  "permissions": [
+    "activeTab",
+	"scripting"
+  ],
+  "host_permissions": [
+	"https://creacionempresamadrid.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://creacionempresamadrid.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
